@@ -1,0 +1,47 @@
+/* Basic page setup */
+
+body {
+  background: linear-gradient(360deg, rgb(96, 210, 255) 0%, rgb(181, 234, 255) 51%, rgb(197, 238, 254) 100%);
+  font-family: "Courier New", Courier, monospace;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+/* The pinboard grid */
+
+.pinboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+  background: none;
+}
+
+.pin {
+  border: 3px solid rgb(67, 131, 215);
+  cursor: pointer;
+  margin: 0;
+}
+
+.pin img {
+  width: 100%;
+  display: block;
+}
+
+/* By default: show images, hide descriptions */
+
+.pin figcaption {
+  display: none;
+}
+
+/* When the pin has the class "text-mode",
+   swap them: hide images, show descriptions */
+
+.pin.text-mode img {
+  display: none;
+}
+
+.pin.text-mode figcaption {
+  display: block;
+  padding: 1.5rem;
+}
