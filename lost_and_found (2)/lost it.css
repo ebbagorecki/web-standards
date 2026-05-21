@@ -1,0 +1,192 @@
+/* Basic page setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(rgb(4, 218, 247), rgb(4, 42, 117));
+  background-repeat: no-repeat;
+  min-width: 100%;
+  min-height: 100vh;
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  border-image: 5%;
+  height: fit-content;
+  font-size: 16px;
+}
+
+header {
+  height: fit-content;
+  margin-left: 5%;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+}
+
+img {
+  margin-left: 3rem;
+}
+
+a {
+  margin: 0rem;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+/* The pinboard grid */
+
+.pinboard {
+  display: grid;
+  grid-template-columns: repeat(4, 12%);
+  gap: 15%;
+  margin-top: 0%;
+  margin-right: 5%;
+}
+
+.pin {
+  /* background-color: aqua; */
+  cursor: crosshair;
+  margin: 0;
+}
+
+.pin figcaption {
+  width: 20vh;
+  height: 20vh;
+  display: grid;
+}
+
+/* By default: show descriptions, hide images */
+
+.pin img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
+/* When the pin has the class "text-mode",
+   swap them: hide description, show images */
+
+.pin.text-mode img {
+  display: block;
+  object-fit: cover;
+}
+
+.pin.text-mode figcaption {
+  display: none;
+  background: rgb(255, 0, 204);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* BUBBLES CONTAINER */
+
+.bubbles {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* SINGLE BUBBLE */
+
+.bubble {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(180, 220, 255, 0.25);
+
+  backdrop-filter: blur(2px);
+
+  animation: floatUp linear infinite;
+}
+
+/* =========================
+   INDIVIDUAL BUBBLES
+========================= */
+
+.bubble1 {
+  width: 20px;
+  height: 20px;
+
+  left: 10%;
+  bottom: -50px;
+
+  animation-duration: 14s;
+}
+
+.bubble2 {
+  width: 40px;
+  height: 40px;
+
+  left: 40%;
+  bottom: -80px;
+
+  animation-duration: 18s;
+}
+
+.bubble3 {
+  width: 15px;
+  height: 15px;
+
+  left: 65%;
+  bottom: -30px;
+
+  animation-duration: 12s;
+}
+
+.bubble4 {
+  width: 50px;
+  height: 50px;
+
+  left: 85%;
+  bottom: -100px;
+
+  animation-duration: 22s;
+}
+
+.bubble5 {
+  width: 25px;
+  height: 25px;
+
+  left: 30%;
+  bottom: -40px;
+
+  animation-duration: 16s;
+}
+
+.bubble6 {
+  width: 35px;
+  height: 35px;
+
+  left: 55%;
+  bottom: -70px;
+
+  animation-duration: 20s;
+}
+
+/* =========================
+   FLOATING ANIMATION
+========================= */
+
+@keyframes floatUp {
+
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
